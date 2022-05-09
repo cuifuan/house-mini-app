@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/rent-list/rent-list",
+    "pages/rent/rent",
+    "pages/rent-order/rent-order",
+    "pages/rent-info/index",
+    "pages/covid/covid",
+    "pages/message/message",
+    "pages/contact/contact",
+    "pages/list/list",
+    "pages/user/user"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#4993f7",
+    "navigationBarTitleText": "富安云",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#4993f7"
+  },
+  "tabBar": {
+    "backgroundColor": "#e9e9ea",
+    "color": "#8a8a8a",
+    "selectedColor": "#4993f7",
+    "list": [{
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "selectedIconPath": "/images/tabBar/dash_active.png",
+        "iconPath": "/images/tabBar/dash.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我",
+        "selectedIconPath": "/images/tabBar/my_active.png",
+        "iconPath": "/images/tabBar/my.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "lazyCodeLoading": "requiredComponents"
+}

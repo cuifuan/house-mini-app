@@ -1,0 +1,12 @@
+html,
+body,
+input,
+view,
+textarea {
+  font-family: PingFang-SC;
+}
+
+page {
+  height: 100%;
+  width: 100%;
+}

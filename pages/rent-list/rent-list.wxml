@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="search_class">
+    <input model:value="{{roomNoStr}}" class="comm_search" placeholder="输入小区名或房号查询" placeholder-class="bran_placeholder" />
+    <button bindtap="searchList" size="default" class="comm_search_btn">
+      查询
+    </button>
+  </view>
+  <view class="bran_type">
+    <view class="{{item.class}}" wx:for="{{tab}}" wx:key="index" data-id="{{index}}" bindtap="changeTab">
+      {{item.label}}
+    </view>
+  </view>
+  <view class="bran_card" wx:for="{{rentList}}" wx:key="index" style="margin-bottom: 20rpx;">
+    <view class="bran_card_item">
+      <view class="bran_label">房源:</view>
+      <view class="bran_value">{{item.community}}【{{item.building}}-{{item.roomNo}}】</view>
+    </view>
+    <view class="bran_card_item">
+      <view class="bran_label">日期:</view>
+      <view class="bran_value {{item.btnType}}">{{item.nextDate}}</view>
+    </view>
+    <view class="bran_card_item">
+      <view class="bran_label">租金:</view>
+      <view class="bran_value">￥{{item.rent}}</view>
+    </view>
+    <view class="bran_card_item">
+      <view class="bran_label">操作:</view>
+      <view class="bran_value">
+        <span style="color: #6c8ddd;" 
+          data-id="{{item.rentListId}}" 
+          data-type="{{item.rentType}}" 
+          bindtap="editRentFrom">【 编辑 】</span>
+        <span style="color: #6c8ddd;margin-left: 20rpx;">【 删除 】</span>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,74 @@
+/*遮罩层*/
+.modal-mask{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+/*遮罩内容*/
+.modal-content{
+  display: flex;
+  flex-direction: column;
+  width: 84%;
+  height: 440rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  text-align: center;
+}
+/*中间内容*/
+.main-content{
+  flex: 1;
+  height: 100%;
+  overflow-y: hidden; 
+  max-height: 80vh; /* 内容高度最高80vh 以免内容太多溢出*/
+}
+.titles{
+  margin-top: 40rpx;
+  font-size: 32rpx;
+  font-weight: bold
+}
+/*底部按钮*/
+.modal-footer{
+  display: flex;
+  flex-direction: row;
+  height: 96rpx;
+  line-height: 96rpx;
+  justify-content: space-between;
+  width: 94%;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+.cancel-btn, .confirm-btn{
+   width:280rpx;
+  height:96rpx;
+  font-weight: bold;
+  font-size: 32rpx;
+  border-radius:46rpx;
+}
+.cancel-btn{
+  color: #000;
+  background:rgba(245,245,245,1); 
+}
+.confirm-btn {
+  background:rgba(0,198,0,1);
+  color: white;
+}
+.formItem{
+  height: 100rpx;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 60rpx 0;
+}
+.phone{
+  margin-left: 20rpx;
+  width: 50%;
+}

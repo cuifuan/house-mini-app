@@ -1,0 +1,12 @@
+<view class="content">
+  <view class="con-card">
+    <h1>感染记录查询</h1>
+    <input placeholder="输入地址例:邱家港路18弄" model:value="{{keyword}}"></input>
+    <button id="searchBtn" type="primary" bindtap="search">查询</button>
+  </view>
+  <view class="remark">非官方小程序，数据来源上海发布公众号和上海卫健委网站，如有疑问请联系开发者微信：【bran13921】</view>
+  <scroll-view class="show-card" scroll-y>
+    <h1>查询结果</h1>
+    <rich-text nodes="{{message}}"></rich-text>
+  </scroll-view>
+</view>

@@ -1,0 +1,75 @@
+/* pages/list/list.wxss */
+image{
+    border: 1px solid red;
+}
+.container1 view {
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.container1 view:nth-child(1) {
+    background-color: aqua;
+}
+
+.container1 view:nth-child(2) {
+    background-color: lightseagreen;
+}
+
+.container1 view:nth-child(3) {
+    background-color: pink;
+}
+
+.container1 {
+    display: flex;
+    /* 均匀排列每个元素,每个元素周围分配相同的空间 */
+    justify-content: space-around;
+}
+
+.container2 view {
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.container2 view:nth-child(1) {
+    background-color: aqua;
+}
+
+.container2 view:nth-child(2) {
+    background-color: lightseagreen;
+}
+
+.container2 view:nth-child(3) {
+    background-color: pink;
+}
+
+.container2 {
+    height: 200px;
+    width: 100px;
+}
+
+.swiper-container {
+    height: 100px;
+    margin-top: 20px;
+}
+
+.item{
+    height: 100%;
+    line-height: 100px;
+    text-align: center;
+}
+
+swiper-item:nth-child(1){
+    background-color: lightseagreen;
+}
+
+swiper-item:nth-child(2){
+    background-color: lightpink;
+}
+
+swiper-item:nth-child(3){
+    background-color: lightskyblue;
+}

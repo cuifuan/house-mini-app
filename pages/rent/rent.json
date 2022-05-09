@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#4993f7",
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance": 150,
+  "navigationBarTitleText": "租金列表",
+  "navigationBarBackgroundColor": "#4993f7"
+}

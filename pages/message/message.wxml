@@ -1,0 +1,9 @@
+<!--pages/message/message.wxml-->
+<text>pages/message/message.wxml</text>
+<view>{{m1.toUpper(username)}}</view>
+
+<wxs module="m1">
+    module.exports.toUpper = function (str) {
+        return str.toUpperCase()
+    }
+</wxs>

@@ -1,0 +1,15 @@
+<view class='modal-mask' wx:if='{{show}}'>
+  <view class='modal-content'>
+      <view class="titles">{{tipmsg.title}}</view>
+      <view class="formItem">
+       <input type="text" name="phone" placeholder='请输入您的既往病史' class='phone' value='{{disName}}' bindinput='formName'></input>
+      </view>
+    <!-- <scroll-view scroll-y class='main-content'>
+      <slot></slot>
+    </scroll-view> -->
+    <view class='modal-footer'>
+      <view wx:if='{{!single}}' class='cancel-btn' bindtap='cancel'>取消</view>
+      <view class='confirm-btn' bindtap='confirm'>确定 </view>
+    </view>
+  </view>
+</view>

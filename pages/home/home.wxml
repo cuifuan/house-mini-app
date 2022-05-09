@@ -1,0 +1,25 @@
+<wxs module="unit" src="/filter/format.wxs"></wxs>
+<view class="content">
+    <view class="header"></view>
+    <!-- 顶部选择框 -->
+    <view class="header_card">
+        <view class="item" wx:for="{{cardList}}" wx:key="id">
+            <view class="money">￥{{unit.format(item.value)}}</view>
+            <view style="color: #8D99AE;">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="main">
+        <view class="grid_list">
+            <view class="grid-item" 
+              wx:for="{{gridList}}" 
+              wx:key="id" 
+              bindtap="clickTik"
+              data-index="{{index}}"
+              >
+                <image src="{{item.icon}}"></image>
+                <text>{{item.name}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+

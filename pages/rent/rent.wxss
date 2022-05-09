@@ -1,0 +1,87 @@
+/* 搜索框 */
+.search_class {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  width: 95%;
+  margin: 15rpx auto;
+  background-color: #f1f2f8;
+}
+
+.comm_search {
+  line-height: 80rpx;
+  height: 80rpx;
+  width: 550rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  padding-left: 20rpx;
+}
+
+.comm_search_btn {
+  background-color: #4993f7;
+  color: #ffffff;
+  width: 200rpx !important;
+  border-radius: 0;
+  border-top-right-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  float: right;
+}
+
+.bran_placeholder {
+  color: #888889;
+  font-size: 32rpx;
+}
+
+.container {
+  padding-top: 10rpx;
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  height: 230rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10rpx 10rpx;
+  display: flex;
+  border-bottom: 2rpx solid #efefef;
+}
+
+.card .img {
+  width: 50%;
+  height: 100%;
+}
+
+.info {
+  width: 405rpx;
+  height: 100%;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.title {
+  font-weight: 500;
+  width: 500rpx;
+  display: inline-block;
+}
+
+.card .info .btn {
+  margin-left: 0rpx;
+  font-size: 32rpx;
+  margin-top: 10rpx;
+  border-radius: 0%;
+}
+
+.nav {
+  width: 120rpx;
+  writing-mode: vertical-rl;
+  text-align: center;
+  padding-right: 10rpx;
+  background-color: #4993f7;
+  color: #ffffff;
+  box-sizing: border-box;
+  margin-top: -10rpx;
+  margin-bottom: -10rpx;
+  margin-right: -10rpx;
+}

@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="search_class">
+    <input model:value="{{roomNoStr}}" class="comm_search" placeholder="输入小区名或房号查询" placeholder-class="bran_placeholder" />
+    <button bindtap="searchList" size="default" class="comm_search_btn">
+      查询
+    </button>
+  </view>
+  <view class="card" wx:for="{{rentList}}" wx:key="index">
+    <image class="img" src="/images/test.jpeg"></image>
+    <scroll-view class="info" scroll-x="true">
+      <view class="title">{{item.community}}-{{item.building}}-{{item.roomNo}}</view>
+      <button size="mini" type="{{item.btnType}}" style="font-weight: 350;" plain="true" class="btn">
+        交租日期:{{item.nextDate}}
+      </button>
+      <view class="rent">
+        <span style="color: #101010;font-weight: 350;">应付租金:</span>
+        <span style="color: #101010;font-weight: 500;">{{item.rent}}元</span>
+      </view>
+    </scroll-view>
+    <view class="nav" data-id="{{item.rentListId}}" bindtap="editRentFrom">
+      编辑
+    </view>
+  </view>
+</view>

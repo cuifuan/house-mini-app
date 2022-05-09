@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "op-rent-type-dialog": "../components/op-rent-type/op-rent-type"
+  },
+  "navigationBarTitleText": "新增租单",
+  "navigationBarBackgroundColor": "#4993f7"
+}

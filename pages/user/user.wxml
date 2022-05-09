@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="header">
+  </view>
+  <view class="bran_avatar">
+    <button class="avatar_wrapper"
+      bindtap="goLogin" 
+    >
+      <image class="avatar" src="{{avatarUrl}}" mode="aspectFill"></image>
+    </button>
+    <view class="info_show" wx:if="{{hasUserInfo}}">
+      {{userInfo.username}} | {{userInfo.userId}}
+    </view>
+    <view class="info_show" wx:else>
+      点击头像登录
+    </view>
+  </view>
+  <view class="logout" bindtap="clickLogout">
+    <image class="icon" src="/images/logout.png"></image>
+    <view style="margin-left: 30rpx;">退出账号</view>
+  </view>
+
+
+  <!-- <view class="userinfo">
+        <block wx:if="{{!hasUserInfo}}">
+            <l-button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </l-button>
+            <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+        </block>
+        <block wx:else>
+            <text class="userinfo-nickname">已登录,登录名{{userInfo.username}}</text>
+        </block>
+    </view> -->
+</view>

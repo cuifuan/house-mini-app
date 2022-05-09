@@ -1,0 +1,67 @@
+page {
+  background-color: #62b37a;
+  height: 100%;
+}
+
+.content {
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.con-card {
+  border-radius: 8rpx;
+  height: 30%;
+  text-align: center;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 3% 5%;
+
+}
+
+h1 {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.con-card input {
+  margin: 20rpx auto;
+  border-bottom: 2rpx solid #333;
+  height: 80rpx;
+}
+
+#searchBtn {
+  background-color: #62b37a;
+  margin: 40rpx auto;
+  width: 100%;
+}
+
+.remark {
+  font-size: 24rpx;
+  color: aliceblue;
+  margin-top: 3%;
+}
+
+.show-card {
+  height: 45%;
+  margin-top: 3%;
+  background-color: white;
+  border-radius: 8rpx;
+  text-align: center;
+  padding: 3% 5%;
+  box-sizing: border-box;
+}
+
+
+.weui-label {
+  width: 3.1em;
+}
+
+.show {
+  text-align: center;
+  margin: 40rpx 60rpx;
+}
+
+ul {
+  padding: 0;margin: 0;text-align: left;list-style-type: none;
+}

@@ -1,0 +1,119 @@
+<view class="content">
+  <form bindsubmit="submit">
+    <!-- 小区 -->
+    <view class="first_card">
+      <view class="required">*</view>
+      <view class="label">小区</view>
+      <input model:value="{{community}}" placeholder="输入小区模糊搜索" name="community" class="input_cfa" placeholder-class="placeholder_style" bindinput="bindInputCommunity" bindblur="bindBlurCommunity" data-validator="required" />
+      <view class="position" wx:if="{{tipShow}}">
+        <view wx:for="{{communityList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+          <view catchtap="changeCommunity" data-name="{{item.dictDesc}}" data-id="{{item.dictCode}}" class="dict_desc">
+            {{item.dictDesc}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 楼号 -->
+    <view class="first_card">
+      <view class="required">*</view>
+      <view class="label">楼号</view>
+      <input name="building" placeholder="请输入楼号" class="input_cfa" model:value="{{building}}" placeholder-class="placeholder_style" />
+    </view>
+    <!-- 房间号 -->
+    <view class="first_card">
+      <view class="required">*</view>
+      <view class="label">房间号</view>
+      <input name="roomNo" placeholder="请输入房间号" model:value="{{roomNo}}" class="input_cfa" placeholder-class="placeholder_style" />
+    </view>
+    <!-- 房租 -->
+    <view class="first_card">
+      <view class="required">*</view>
+      <view class="label">房屋租金</view>
+      <input name="rent" placeholder="请输入房租" class="input_cfa" model:value="{{rent}}" placeholder-class="placeholder_style" />
+    </view>
+    <!-- 交租日期 -->
+    <view class="first_card">
+      <view class="required">*</view>
+      <view class="label">交租日期</view>
+      <picker name="nextDate" bindchange="bindNextDateChange" mode="date" value="{{nextDate}}" style="width: 100%;">
+        <view class="picker_text">
+          <span style="width: 85%;">{{nextDate}}</span>
+          <view class="copy_right"></view>
+        </view>
+      </picker>
+
+    </view>
+    <!-- 起租日期 -->
+    <view class="first_card">
+      <view class="required"></view>
+      <view class="label">起租日期</view>
+      <picker bindchange="bindStartDateChange" mode="date" value="{{startDate}}" style="width: 100%;">
+        <view class="picker_text">
+          <span style="width: 85%;">{{startDate}}</span>
+          <view class="copy_right"></view>
+        </view>
+      </picker>
+    </view>
+    <view class="first_card">
+      <view class="required"></view>
+      <view class="label">到期日期</view>
+      <picker bindchange="bindEndDateChange" mode="date" value="{{endDate}}" style="width: 100%;">
+        <view class="picker_text">
+          <span style="width: 85%;">{{endDate}}</span>
+          <view class="copy_right"></view>
+        </view>
+      </picker>
+    </view>
+    <view style="height: 20rpx;"></view>
+    <view class="first_card">
+      <view class="required"></view>
+      <view class="label">{{isYz?'业主':'租客'}}姓名</view>
+      <input model:value="{{unionName}}" placeholder="请输入{{isYz?'业主':'租客'}}姓名" class="input_cfa" placeholder-class="placeholder_style" />
+    </view>
+    <view class="first_card">
+      <view class="required"></view>
+      <view class="label">{{isYz?'业主':'租客'}}手机</view>
+      <input model:value="{{phoneNo}}" placeholder="请输入{{isYz?'业主':'租客'}}手机号" class="input_cfa" placeholder-class="placeholder_style" />
+    </view>
+    <view style="height: 20rpx;"></view>
+    <view class="first_card" wx:if="{{isYz}}">
+      <view class="required"></view>
+      <view class="label">水费户号</view>
+      <input model:value="{{waterNo}}" placeholder="请输入水费户号" class="input_cfa" placeholder-class="placeholder_style" />
+    </view>
+    <view class="first_card" wx:if="{{isYz}}">
+      <view class="required"></view>
+      <view class="label">电费户号</view>
+      <input model:value="{{electricNo}}" placeholder="请输入电费户号" class="input_cfa" placeholder-class="placeholder_style" />
+    </view>
+    <view class="first_card" wx:if="{{isYz}}">
+      <view class="required"></view>
+      <view class="label">燃气户号</view>
+      <input model:value="{{gasNo}}" placeholder="请输入燃气户号" class="input_cfa" placeholder-class="placeholder_style" />
+    </view>
+    <view style="height: 20rpx;"></view>
+    <view class="uploader">
+      <view class="uploader_header_title">图片上传</view>
+      <!-- 容器 -->
+      <view class='ui_uploader_cell'>
+        <!-- 根据已选择的图片临时路径数组展示图片 -->
+        <view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="index">
+          <!-- 删除 -->
+          <icon class='ui_uploader_item_icon' bindtap='clearImg' data-index="{{index}}" type="clear" size="20" color="red" />
+          <!-- 图片 -->
+          <image bindtap='showImg' data-index="{{index}}" src='{{item}}'></image>
+        </view>
+        <!-- 上传按钮+框 -->
+        <view class='ui_uploader' bindtap='upload' wx:if="{{showUpload}}"></view>
+      </view>
+      <view class="upload_explanation">支持格式为:.jpg .png,上传文件限制:{{uploaderNum}}/9张</view>
+    </view>
+    <button style="width: 98%;background-color: #4993f7;color: white;margin: 10rpx auto;" form-type="submit">
+      提交
+    </button>
+  </form>
+  <view style="height: 20rpx;"></view>
+</view>
+
+<op-rent-type-dialog show="{{showDialog}}" id="opRentType">
+</op-rent-type-dialog>

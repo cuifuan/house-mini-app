@@ -1,0 +1,45 @@
+<view>
+    <h1>图片测试</h1>
+    <image src="/images/wallhaven-1kmx19.jpeg" mode="widthFix"></image>
+</view>
+
+<view class="container1">
+    <view>刘二叉</view>
+    <view>周大叉</view>
+    <view>连大炮</view>
+</view>
+
+<view>
+    <h1>滚动列</h1>
+</view>
+
+<scroll-view class="container2" scroll-y>
+    <view>刘二叉</view>
+    <view>周大叉</view>
+    <view>连大炮</view>
+</scroll-view>
+
+<view>
+    <h1>轮播图</h1>
+</view>
+
+<swiper class="swiper-container" indicator-dots indicator-color="white" indicator-active-color="pink" autoplay="true" interval="2000" circular="true">
+    <swiper-item class="item">
+        <view>刘二叉</view>
+    </swiper-item>
+    <swiper-item class="item">
+        <view>周大叉</view>
+    </swiper-item>
+    <swiper-item class="item">
+        <view>连大炮</view>
+    </swiper-item>
+</swiper>
+
+<view style="-webkit-user-select:text;">
+    <h1>长按手机号复制功能</h1>
+    <text user-select='true' style="font-size: larger;">17521309999</text>
+</view>
+
+<view>
+    <rich-text nodes="<h1 style='color:red;'>标题</h1>"></rich-text>
+</view>

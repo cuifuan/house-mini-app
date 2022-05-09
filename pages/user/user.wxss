@@ -1,0 +1,63 @@
+.container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #f2f4f5;
+}
+
+.header {
+  width: 100%;
+  height: 250rpx;
+  background-color: #4993f7;
+}
+
+.bran_avatar {
+  width: 90%;
+  height: 250rpx;
+  position: absolute;
+  margin: 0 auto;
+  border-radius: 20rpx;
+  margin-top: -100rpx;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+}
+
+.avatar_wrapper {
+  width: 230rpx !important;
+  position: relative;
+  margin: 0 auto;
+  top: -115rpx;
+  padding: 0;
+  height: 230rpx;
+  border-radius: 50%;
+}
+
+.avatar {
+  width: 100%;
+  height: 230rpx;
+}
+
+.logout {
+  height: 100rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 200rpx;
+  align-items: center;
+  display: flex;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.icon {
+  /* border: 1px solid red; */
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.info_show {
+  margin-top: -80rpx;
+  text-align: center;
+}
