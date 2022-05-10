@@ -27,7 +27,10 @@ module.exports = {
       }
       if (method === 'POST') {
         header = {
-          'content-type': 'application/json;charset=UTF-8'
+          'content-type': 'application/json;charset=UTF-8',
+          'Cross-Origin-Opener-Policy': 'same-origin',
+          'Cross-Origin-Embedder-Policy': 'require-corp'
+
         }
       }
       let token = wx.getStorageSync('token');

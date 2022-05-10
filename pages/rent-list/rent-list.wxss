@@ -85,6 +85,16 @@ page {
   font-size: 32rpx;
 }
 
+.bran_btn_value {
+  /* border: 2rpx solid red; */
+  line-height: 50rpx;
+  display: flex;
+}
+
+.bran_btn_value > button {
+  margin-left: 20rpx;
+}
+
 .bran_label {
   color: #bbbbbb;
   /* font-weight: 600; */

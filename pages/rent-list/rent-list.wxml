@@ -25,12 +25,9 @@
     </view>
     <view class="bran_card_item">
       <view class="bran_label">操作:</view>
-      <view class="bran_value">
-        <span style="color: #6c8ddd;" 
-          data-id="{{item.rentListId}}" 
-          data-type="{{item.rentType}}" 
-          bindtap="editRentFrom">【 编辑 】</span>
-        <span style="color: #6c8ddd;margin-left: 20rpx;">【 删除 】</span>
+      <view class="bran_btn_value">
+        <button plain="true" data-id="{{item.rentListId}}" data-type="{{item.rentType}}" bindtap="editRentFrom" size="mini">编辑</button>
+        <button plain="true" data-id="{{item.rentListId}}" bindtap="removeById" size="mini">删除</button>
       </view>
     </view>
   </view>

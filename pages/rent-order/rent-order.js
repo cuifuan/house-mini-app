@@ -313,7 +313,7 @@ Page({
         if (res.data) {
           wx.hideLoading()
           wx.showToast({
-            title: '修改成功',
+            title: '提交成功',
             icon: 'success',
             duration: 2000
           })
