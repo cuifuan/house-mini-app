@@ -1,5 +1,5 @@
 page {
-  font-size: 28rpx;
+  font-size: 32rpx;
 }
 
 .content {
@@ -56,7 +56,7 @@ page {
 }
 
 .placeholder_style {
-  font-size: 28rpx;
+  font-size: 32rpx;
   color: #ababab;
 }
 

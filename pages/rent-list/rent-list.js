@@ -26,13 +26,13 @@ Page({
     rentType: 1,
     isPush: false
   },
-  searchList() {
+  searchList(cb) {
     this.setData({
       pageNo: 1,
       pageCount: 0,
       rentList: []
     })
-    this.getRoomList();
+    this.getRoomList(cb);
   },
   editRentFrom(options) {
     let rentListId = options.currentTarget.dataset.id;
@@ -58,7 +58,7 @@ Page({
       }
     })
   },
-  getRoomList() {
+  getRoomList(cb) {
     // 防止重复触发上拉数据
     if (this.data.isloading) {
       return
@@ -87,6 +87,7 @@ Page({
         this.setData({
           isloading: false,
         });
+        cb && cb()
       })
   },
   /**
@@ -148,10 +149,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    // 数据重置成功后 关闭效果
-    wx.stopPullDownRefresh({
-      success: (res) => {},
-    });
+    this.searchList(() => {
+      wx.stopPullDownRefresh();
+    })
   },
 
   /**

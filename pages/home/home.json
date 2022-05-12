@@ -3,6 +3,6 @@
   },
   "navigationBarTitleText": "首页",
   "navigationBarBackgroundColor": "#4993f7",
-  "enablePullDownRefresh": false,
+  "enablePullDownRefresh": true,
   "backgroundColor": "#4993f7"
 }

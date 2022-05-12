@@ -35,7 +35,9 @@
     <view class="first_card">
       <view class="required">*</view>
       <view class="label">交租日期</view>
-      <picker name="nextDate" bindchange="bindNextDateChange" mode="date" value="{{nextDate}}" style="width: 100%;">
+      <picker name="nextDate" bindchange="bindNextDateChange" 
+        mode="date" value="{{nextDate}}" style="width: 100%;"
+        placeholder="请选择交租日期">
         <view class="picker_text">
           <span style="width: 85%;">{{nextDate}}</span>
           <view class="copy_right"></view>
@@ -67,13 +69,13 @@
     <view style="height: 20rpx;"></view>
     <view class="first_card">
       <view class="required"></view>
-      <view class="label">{{isYz?'业主':'租客'}}姓名</view>
-      <input model:value="{{unionName}}" placeholder="请输入{{isYz?'业主':'租客'}}姓名" class="input_cfa" placeholder-class="placeholder_style" />
+      <view class="label">{{isYz?'业主':'租客'}}</view>
+      <input model:value="{{unionName}}" placeholder="{{isYz?'业主':'租客'}}" class="input_cfa" placeholder-class="placeholder_style" />
     </view>
     <view class="first_card">
       <view class="required"></view>
-      <view class="label">{{isYz?'业主':'租客'}}手机</view>
-      <input model:value="{{phoneNo}}" placeholder="请输入{{isYz?'业主':'租客'}}手机号" class="input_cfa" placeholder-class="placeholder_style" />
+      <view class="label">联系{{isYz?'业主':'租客'}}</view>
+      <input model:value="{{phoneNo}}" placeholder="怎么联系{{isYz?'业主':'租客'}}" class="input_cfa" placeholder-class="placeholder_style" />
     </view>
     <view style="height: 20rpx;"></view>
     <view class="first_card" wx:if="{{isYz}}">

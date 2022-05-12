@@ -15,17 +15,17 @@ Page({
     cardList: [{
         "id": 1,
         "name": "本月应收",
-        "value": 160000.90
+        "value": 0
       },
       {
         "id": 2,
         "name": "本月应付",
-        "value": 60000.90
+        "value": 0
       },
       {
         "id": 3,
         "name": "统计利润",
-        "value": 100000.00
+        "value": 0
       }
     ],
     // 显示弹窗选择
@@ -36,6 +36,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // wx.stopPullDownRefresh() //刷新完成后停止下拉刷新动效
     this.getDash()
     this.getGridList()
   },
@@ -61,6 +62,9 @@ Page({
   },
   // 获取头部统计数据
   getDash() {
+    wx.showLoading({
+      title: '刷新中',
+    })
     request('rentList/dash', 'POST')
       .then((res) => {
         let cardList = this.data.cardList
@@ -70,18 +74,25 @@ Page({
         this.setData({
           cardList: cardList
         })
+        wx.hideLoading({
+          success: (res) => {
+            wx.stopPullDownRefresh()
+          }
+        })
       })
   },
 
   // 获取九宫格
   getGridList() {
     this.setData({
-      gridList: [{
-          id: 1,
-          name: "感染记录",
-          icon: "https://6375-cuifuan-4gl00gnn986698af-1311152798.tcb.qcloud.la/icon/%E7%97%85%E6%AF%92.png?sign=b2ad506b1b36047871c0dcecff0d1a69&t=1651921292",
-          path: "/pages/covid/covid"
-        }, {
+      gridList: [
+        // {
+        //   id: 1,
+        //   name: "感染记录",
+        //   icon: "https://6375-cuifuan-4gl00gnn986698af-1311152798.tcb.qcloud.la/icon/%E7%97%85%E6%AF%92.png?sign=b2ad506b1b36047871c0dcecff0d1a69&t=1651921292",
+        //   path: "/pages/covid/covid"
+        // }, 
+        {
           id: 2,
           name: "新增业主租单",
           icon: "https://6375-cuifuan-4gl00gnn986698af-1311152798.tcb.qcloud.la/icon/%E6%96%B0%E5%A2%9E.png?sign=364df300873f6e0b4355dfcfc7df9097&t=1651921478",

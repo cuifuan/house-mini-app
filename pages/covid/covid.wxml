@@ -1,4 +1,4 @@
-<view class="content">
+<!-- <view class="content">
   <view class="con-card">
     <h1>感染记录查询</h1>
     <input placeholder="输入地址例:邱家港路18弄" model:value="{{keyword}}"></input>
@@ -9,4 +9,4 @@
     <h1>查询结果</h1>
     <rich-text nodes="{{message}}"></rich-text>
   </scroll-view>
-</view>
+</view> -->
