@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "@vant/weapp": "^1.10.3",
+    "miniprogram-api-promise": "^1.0.4",
+    "mobx-miniprogram": "^4.13.2",
+    "mobx-miniprogram-bindings": "^2.1.5"
+  },
+  "name": "fuan-cloud",
+  "description": "每月租金统计功能",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuifuan/fuan-cloud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cuifuan/fuan-cloud/issues"
+  },
+  "homepage": "https://github.com/cuifuan/fuan-cloud#readme"
+}

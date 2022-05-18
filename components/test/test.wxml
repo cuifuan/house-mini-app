@@ -1,2 +1,8 @@
-<!--components/test/test.wxml-->
-<text>components/test/test.wxml</text>
+<view class="test_comp">
+    <h1>多插槽测试</h1>
+    <slot name="header"></slot>
+    <view>组件的内容,count:{{count}}</view>
+    <slot name="bottom"></slot>
+    <button type="primary" bindtap="addCount">子组件count+1</button>
+    <view>测试 behavior ：username：{{username}}</view>
+</view>

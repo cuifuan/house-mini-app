@@ -1,13 +1,19 @@
 import {
   request
 } from '../../utils/request'
+import {
+  createStoreBindings
+} from 'mobx-miniprogram-bindings'
+import {
+  store
+} from '../../store/store'
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     count: 0,
-    rentList: [],
+    // rentList: [],
     isloading: false,
     pageNo: 1,
     pageSize: 10,
@@ -35,12 +41,12 @@ Page({
     this.getRoomList(cb);
   },
   editRentFrom(options) {
-    let rentListId = options.currentTarget.dataset.id;
+    let index = options.currentTarget.dataset.id;
     let type = options.currentTarget.dataset.type;
     let isYz = type === 1 ? 'yevu' : 'zuke';
     let that = this
     wx.navigateTo({
-      url: '/pages/rent-order/rent-order?id=' + rentListId + '&isYz=' + isYz,
+      url: '/pages/rent-order/rent-order?id=' + index + '&isYz=' + isYz,
       events: {
         // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
         acceptDataFromOpenedPage: function (data) {
@@ -77,12 +83,13 @@ Page({
     }
     request('rentList/list', 'POST', param)
       .then((res) => {
-        let pageNo = this.data.pageNo
         this.setData({
-          rentList: [...this.data.rentList, ...res.data],
           pageNo: res.pageNo,
           pageCount: res.pageCount
         });
+        // 调用 setRentList action ，将数据写入 store
+        let rentList = [...this.data.rentList, ...res.data];
+        this.setRentList(rentList)
         wx.hideLoading();
         this.setData({
           isloading: false,
@@ -94,13 +101,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 绑定 MobX store
+    this.storeBindings = createStoreBindings(this, {
+      store, // 需要绑定的数据仓库
+      fields: ['rentList'], // 将 this.data.rentList 绑定为仓库中的 rentList ，即租单数据
+      actions: ['setRentList']
+    })
     if (!this.data.isloading) {
       this.getRoomList();
     }
     this.changeActive(0)
   },
   changeTab(e) {
-    console.log(e.currentTarget.dataset.id)
     let index = e.currentTarget.dataset.id;
     this.changeActive(index)
   },
@@ -143,7 +155,10 @@ Page({
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {},
+  onUnload: function () {
+    // 解绑
+    this.storeBindings.destroyStoreBindings()
+  },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作

@@ -1,1 +1,4 @@
 /* components/test/test.wxss */
+.test_comp{
+  border: 2rpx solid red;
+}

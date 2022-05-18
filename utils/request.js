@@ -72,9 +72,9 @@ module.exports = {
             if (data.code == -1) {
               // wx.hideLoading();
               wx.showToast({
-                title: '操作失败' + data.msg,
-                icon: 'error',
-                duration: 2000
+                title: data.msg,
+                icon: 'none',
+                duration: 3000
               })
             }
             if (data.code == 404) {

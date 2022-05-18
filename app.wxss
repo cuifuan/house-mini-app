@@ -9,4 +9,7 @@ textarea {
 page {
   height: 100%;
   width: 100%;
+  /* 定制警告按钮的背景色与边框颜色 */
+  --button-danger-background-color: #C00000;
+  --button-danger-border-color: #D60000;
 }
