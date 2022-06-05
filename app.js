@@ -1,62 +1,83 @@
 // app.js
 import {
-    promisifyAll,
-    promisify
+  promisifyAll,
+  promisify
 } from 'miniprogram-api-promise';
 import {
-    store
+  store
 } from './store/store';
-const wxp = {}
+// const wxp = {}
 // promisify all wx's api
-promisifyAll(wx, wxp)
+// promisifyAll(wx, wxp)
 // console.log(wxp.getSystemInfoSync())
 // wxp.getSystemInfo().then(console.log)
 // wxp.showModal().then(wxp.openSetting())
 
 // compatible usage
-wxp.getSystemInfo({
-    success(res) {
-        console.log(res)
-    }
-})
+// wxp.getSystemInfo({
+//     success(res) {
+//         console.log(res)
+//     }
+// })
 
 // promisify single api
-promisify(wx.getSystemInfo)().then(console.log)
+// promisify()().then(console.log)
 App({
-    onLaunch() {
-        // @font-face {
-        //   font-family: 'PingFang-SC';
-        //   src: url("https://6375-cuifuan-4gl00gnn986698af-1311152798.tcb.qcloud.la/font/PingFang%20SC%20Regular.ttf?sign=dd333f61c6e163c52dd51e81175d357d&t=1650814801");
-        // }
-        wx.loadFontFace({
-            family: 'PingFang-SC',
-            source: 'url("https://6375-cuifuan-4gl00gnn986698af-1311152798.tcb.qcloud.la/font/PingFang%20SC.ttf?sign=0f3c98da6f45019801b5c990b205b853&t=1651685380")',
-            success: console.log
-        })
-        // wx.loadFontFace({
-        //   family: 'PingFangSC-Medium',
-        //   source: 'url("")',
-        //   global: true,
-        //   success: function () {
-        //     console.log('load font success')
-        //   }
-        // })
-        // 展示本地存储能力
-        // const logs = wx.getStorageSync('logs') || []
-        // logs.unshift(Date.now())
-        // wx.setStorageSync('logs', logs)
-        // 登录
-        // wx.login({
-        //   success: res => {
-        //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        //   }
-        // })
-    },
-    globalData: {
-        userInfo: null
-    },
-    // onShow(options) {
-    //     // 更新
-    //     store.update();
-    // },
+  onLaunch() {
+    let self = this
+    let isLoad = false
+    if (!isLoad) {
+      wx.loadFontFace({
+        family: 'alifont',
+        source: 'url("https://6375-cuifuan-4gl00gnn986698af-1311152798.tcb.qcloud.la/font/PingFang%20SC.ttf?sign=baa3d13e406819f42c22e86f0589669f&t=1654460546")',
+        success: function (e) {
+          console.log(e, '动态加载字体成功')
+          self.isLoad = true
+        },
+        fail: function (e) {
+          console.log(e, '动态加载字体失败')
+        },
+        global: true
+      })
+    }
+
+    // wx.loadFontFace({
+    //   family: 'Bitstream Vera Serif Bold',
+    //   source: 'url("https://sungd.github.io/Pacifico.ttf")',
+    //   success(res) {
+    //     console.log(res.status)
+    //   },
+    //   fail: function(res) {
+    //     console.log(res.status)
+    //   },
+    //   complete: function(res) {
+    //     console.log(res.status)
+    //   }
+    // })
+    // wx.loadFontFace({
+    //   family: 'PingFangSC-Medium',
+    //   source: 'url("")',
+    //   global: true,
+    //   success: function () {
+    //     console.log('load font success')
+    //   }
+    // })
+    // 展示本地存储能力
+    // const logs = wx.getStorageSync('logs') || []
+    // logs.unshift(Date.now())
+    // wx.setStorageSync('logs', logs)
+    // 登录
+    // wx.login({
+    //   success: res => {
+    //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
+    //   }
+    // })
+  },
+  globalData: {
+    userInfo: null
+  },
+  // onShow(options) {
+  //     // 更新
+  //     store.update();
+  // },
 })

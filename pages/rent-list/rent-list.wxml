@@ -10,18 +10,14 @@
       {{item.label}}
     </view>
   </view>
-  <view class="bran_card bran_card_{{item.btnType}}" wx:for="{{rentList}}" wx:key="index" style="margin-bottom: 20rpx;">
+  <view class="bran_card bran_card_{{item.btnType}}" wx:for="{{rentList}}" wx:key="index" style="margin-bottom: 20rpx;" bindtap="getRentInfo" data-id="{{index}}">
     <view class="date_notice date_notice_{{item.btnType}}">
-      {{item.nextDate}}
+      第{{index+1}}套 | {{item.nextDate}}
     </view>
     <view class="bran_card_item">
       <view class="bran_label">房源:</view>
       <view class="bran_value">{{item.community}}[{{item.building}}-{{item.roomNo}}]</view>
     </view>
-    <!-- <view class="bran_card_item">
-      <view class="bran_label">日期:</view>
-      <view class="bran_value {{item.btnType}}">{{item.nextDate}}</view>
-    </view> -->
     <view class="bran_card_item">
       <view class="bran_label">租金:</view>
       <view class="bran_value">￥{{item.rent}}</view>

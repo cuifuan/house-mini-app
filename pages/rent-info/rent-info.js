@@ -1,4 +1,10 @@
 // pages/rent-info/index.js
+import {
+  createStoreBindings
+} from 'mobx-miniprogram-bindings'
+import {
+  store
+} from '../../store/store'
 Page({
 
   /**
@@ -9,17 +15,66 @@ Page({
       community: '{{community}}',
       building: '{{building}}',
       roomNo: '{{roomNo}}'
-    }
+    },
+    // 业主界面才存在水电煤
+    isYz: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 判断有无参数
-    if (options) {
-
+    // 绑定 MobX store
+    this.storeBindings = createStoreBindings(this, {
+      store,
+      // fields: ['rentInfo'],
+      actions: ['getRentInfo']
+    })
+    // console.log()
+    // let model = this.getRentInfo()
+    let model = {
+      "btnType": "warn",
+      "building": "18",
+      "community": "测试房源",
+      "electricNo": "12121313",
+      "endDate": "2028-02-06",
+      "gasNo": "134314345",
+      "imgText": "",
+      "intervalDate": "季付",
+      "nextDate": "2022-05-08",
+      "pageNo": null,
+      "pageSize": null,
+      "phoneNo": "19500008888",
+      "rent": 7800,
+      "rentListId": 2,
+      "rentType": 1,
+      "roomNo": "202",
+      "roomNoStr": null,
+      "roomType": "4房2厅2卫",
+      "startDate": "2022-02-07",
+      "unionName": "测试人员",
+      "uploaderList": [],
+      "userId": "U10000",
+      "waterNo": "11121212091703",
+      "rentCycle":3,
+      "rentMonth": 2600
     }
+    this.setData({
+      isYz: model.rentType === 1,
+      model: model
+    })
+    wx.setNavigationBarTitle({
+      title: this.data.isYz ? '业主租单详情' : '租客租单详情'
+    })
+    // 判断有无参数
+    // if (options) {
+    //   let index = options.id
+
+
+    // let model = this.getRentList(index)
+    // console.log(model.uploaderList)
+    // }
+
   },
   /**
    * 获取系统信息 设置相机的大小适应屏幕
@@ -44,8 +99,8 @@ Page({
     console.log("========= 调用开始录像 ===========")
     let that = this
     this.ctx.startRecord({
-      timeoutCallback: () => {},
-      success: (res) => {},
+      timeoutCallback: () => { },
+      success: (res) => { },
       fail() {
         wx.showToast({
           title: '录像失败',
@@ -162,5 +217,28 @@ Page({
   },
   submitForm() {
 
+  },
+  editRentFrom(){
+  //   let index = options.currentTarget.dataset.id;
+  //   let type = options.currentTarget.dataset.type;
+    let isYz = this.data.isYz;
+    let that = this
+    wx.navigateTo({
+      url: '/pages/rent-order/rent-order?id=' + this.data.rentListId + '&isYz=' + isYz,
+      events: {
+        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+        acceptDataFromOpenedPage: function (data) {
+          if (data.data === "ok") {
+            that.searchList("")
+          }
+        }
+      },
+      success: function (res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromOpenerPage', {
+          data: 'areYouOk'
+        })
+      }
+    })
   }
 })

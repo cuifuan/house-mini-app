@@ -6,20 +6,20 @@ import {
 // 数据仓库
 export const store = observable({
 
-    rentList: [], // 租单列表
+    rentInfo: {}, // 租单详情
 
     activeTabbarIndex: 0,
 
-    getRentList: action(function (index) {
-        return this.rentList[index]
+    getRentInfo: action(function () {
+        return this.rentInfo
     }),
 
-    // 设置租单列表，从网络上获取到数据之后调用
-    setRentList: action(function (list) {
-        this.rentList = list
+    // 设置租单详情
+    setRentInfo: action(function (rentInfo) {
+        this.rentInfo = rentInfo
     }),
+
     updateActiveTabbarIndex: action(function (index) {
-        // this.updateStoreBindings()
         this.activeTabbarIndex = index
     })
 

@@ -13,7 +13,7 @@ Page({
    */
   data: {
     count: 0,
-    // rentList: [],
+    rentList: [],
     isloading: false,
     pageNo: 1,
     pageSize: 10,
@@ -32,6 +32,24 @@ Page({
     rentType: 1,
     isPush: false
   },
+  /**
+ * 生命周期函数--监听页面加载
+ */
+  onLoad: function (options) {
+    if (!this.data.isloading) {
+      this.getRoomList();
+    }
+    this.changeActive(0)
+    // 绑定 MobX store
+    this.storeBindings = createStoreBindings(this, {
+      // 映射容器的实例
+      store,
+      // 映射容器的数据字段
+      // fields: ['rentInfo'],
+      // 映射容器修改的方法
+      actions: ['setRentInfo']
+    })
+  },
   searchList(cb) {
     this.setData({
       pageNo: 1,
@@ -39,30 +57,6 @@ Page({
       rentList: []
     })
     this.getRoomList(cb);
-  },
-  editRentFrom(options) {
-    let index = options.currentTarget.dataset.id;
-    let type = options.currentTarget.dataset.type;
-    let isYz = type === 1 ? 'yevu' : 'zuke';
-    let that = this
-    wx.navigateTo({
-      url: '/pages/rent-order/rent-order?id=' + index + '&isYz=' + isYz,
-      events: {
-        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
-        acceptDataFromOpenedPage: function (data) {
-          console.log(data)
-          if (data.data === "ok") {
-            that.searchList("")
-          }
-        }
-      },
-      success: function (res) {
-        // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('acceptDataFromOpenerPage', {
-          data: 'areYouOk'
-        })
-      }
-    })
   },
   getRoomList(cb) {
     // 防止重复触发上拉数据
@@ -89,28 +83,14 @@ Page({
         });
         // 调用 setRentList action ，将数据写入 store
         let rentList = [...this.data.rentList, ...res.data];
-        this.setRentList(rentList)
+        // this.setRentList(rentList)
         wx.hideLoading();
         this.setData({
           isloading: false,
+          rentList: rentList
         });
         cb && cb()
       })
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    // 绑定 MobX store
-    this.storeBindings = createStoreBindings(this, {
-      store, // 需要绑定的数据仓库
-      fields: ['rentList'], // 将 this.data.rentList 绑定为仓库中的 rentList ，即租单数据
-      actions: ['setRentList']
-    })
-    if (!this.data.isloading) {
-      this.getRoomList();
-    }
-    this.changeActive(0)
   },
   changeTab(e) {
     let index = e.currentTarget.dataset.id;
@@ -140,24 +120,24 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {},
+  onReady: function () { },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {},
+  onShow: function () { },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {},
+  onHide: function () { },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
     // 解绑
-    this.storeBindings.destroyStoreBindings()
+    // this.storeBindings.destroyStoreBindings()
   },
 
   /**
@@ -175,8 +155,6 @@ Page({
   onReachBottom: function () {
     // 判断页面数据加载完
     let curNo = this.data.pageNo;
-    console.log(this.data.pageNo)
-    console.log(this.data.pageCount)
     if (curNo === this.data.pageCount) {
       wx.showToast({
         title: '数据已加载完',
@@ -194,7 +172,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {},
+  onShareAppMessage: function () { },
   removeById: function (e) {
     let that = this;
     wx.showModal({
@@ -224,6 +202,14 @@ Page({
           console.log('用户点击取消')
         }
       }
+    })
+  },
+  getRentInfo: function (args) {
+    let index = args.currentTarget.dataset.id
+    // console.log(this.data.rentList[index])
+    this.setRentInfo(this.data.rentList[index])
+    wx.navigateTo({
+      url:"/pages/rent-info/rent-info"
     })
   }
 });

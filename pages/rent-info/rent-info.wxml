@@ -1,7 +1,38 @@
 <view>
+  <view class="page_bg">
+  </view>
   <view class="header_card">
-    <view>
-      {{model.community}}【{{model.building}}-{{model.roomNo}}】
+    <view class="list_content">
+      <view class="header_card_title">小区 :</view>
+      <view class="header_card_value">{{model.community}}</view>
     </view>
+    <view class="list_content">
+      <view class="header_card_title">楼栋房号 :</view>
+      <view class="header_card_value">{{model.building}}号{{model.roomNo}}室</view>
+    </view>
+    <view class="list_content">
+      <view class="header_card_title">交租日期 :</view>
+      <view class="header_card_value">{{model.nextDate}}</view>
+    </view>
+    <view class="list_content">
+      <view class="header_card_title">月租金 :</view>
+      <view class="header_card_value">{{model.rentMonth}} 元</view>
+    </view>
+    <view class="list_content">
+      <view class="header_card_title">收租周期 :</view>
+      <view class="header_card_value">{{model.rentCycle}}月/次</view>
+    </view>
+    <view class="list_content">
+      <view class="header_card_title">应付租金 :</view>
+      <view class="header_card_value">{{model.rent}} 元</view>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" class="time_line">
+    <time-line></time-line>
+  </scroll-view>
+  <view class="booter_btn">
+    <van-button color="var(--main-theme-color)" bindtap="editRentFrom">修改</van-button>
+    <van-button color="var(--main-theme-color)" plain>收租</van-button>
+    <van-button  type="danger">删除</van-button>
   </view>
 </view>

@@ -1,0 +1,12 @@
+<view class='dynamic'>
+    <view class='dynamic-item' wx:for='{{value}}' wx:key="index">
+      <image class='dynamic-avatar' src='https://6375-cuifuan-4gl00gnn986698af-1311152798.tcb.qcloud.la/icon/%E6%B5%81%E7%A8%8B.png?sign=7281f4f3e50f408ada33c017b9c91fab&t=1654465244'></image>
+      <view class='dynamic-memo'>
+        <view class='dynamic-info hairline-bottom'>
+          <view class='dynamic-title'>{{item.title}}</view>
+          <view class='dynamic-desc'>{{item.desc}}</view>
+          <view class='dynamic-time'>{{item.time}}</view>
+        </view>
+      </view>
+    </view>
+  </view>

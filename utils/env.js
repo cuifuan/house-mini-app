@@ -2,15 +2,10 @@
     module.exports={
         //开发环境的url
         dev:{
-            baseUrl:"http://192.168.0.111:9999/house"
-        },
-        //测试环境url
-        test:{
-            // baseUrl:"http://www.test.com"
+            baseUrl:"http://192.168.1.100:9999/house"
         },
         //线上环境url
         prod:{
-            // baseUrl:'https://api.it120.cc'
             baseUrl:"https://www.zabbix.store/basic-api"
         }
     }
