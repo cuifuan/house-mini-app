@@ -58,6 +58,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "pages/rent-info/rent-info",
+          "pathName": "pages/rent-info/rent-info",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

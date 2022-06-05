@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#4993f7",
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance": 150,
+  "navigationBarTitleText": "租单详情",
+  "navigationBarBackgroundColor": "#4993f7"
+}

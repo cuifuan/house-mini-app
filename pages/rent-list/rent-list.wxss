@@ -48,23 +48,33 @@ page {
 /* 分类 */
 .bran_type {
   height: 100rpx;
-  display: flex;
-  margin: 20rpx auto;
   background-color: #ffffff;
   line-height: 100rpx;
   box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 20rpx;
+  display: flex;
+  border-radius: 20rpx;
 }
 
 .bran_type_item {
   color: #a1a1a2;
-  margin: 0 30rpx;
+  /* margin: 0 30rpx; */
+  width: 50%;
+  text-align: center;
+  border-radius: 20rpx;
 }
 
 .bran_type_item_active {
-  color: var(--main-theme-color);
-  margin: 0 30rpx;
-  border-bottom: 7rpx solid var(--main-theme-color);
-  height: 80rpx;
+  width: 50%;
+  text-align: center;
+  background-color: var(--main-theme-color);
+  color: #f2f4f5;
+  line-height: 100rpx;
+  /* margin: 0 30rpx; */
+  /* border-bottom: 7rpx solid var(--main-theme-color); */
+  /* height: 80rpx; */
+  border-radius: 20rpx;
 }
 
 /* 卡片 */
@@ -72,17 +82,38 @@ page {
   min-height: 220rpx;
   box-sizing: border-box;
   background-color: #ffffff;
-  padding: 20rpx 30rpx;
+  /* padding: 20rpx 30rpx; */
+  width: 95%;
+  margin: 0 auto;
   margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.bran_card_warn{
+  border: 2rpx solid #D90429;
+}
+
+.date_notice{
+  line-height: 70rpx;
+  color: white;
+  text-align: center;
+}
+.date_notice_warn{
+  background-color: #D90429;
+}
+.date_notice_primary{
+  background-color: var(--main-theme-color);
 }
 
 .bran_card_item {
   height: 50rpx;
-  margin-bottom: 10rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 32rpx;
+  width: 90%;
+  margin: 20rpx auto;
 }
 
 .bran_btn_value {

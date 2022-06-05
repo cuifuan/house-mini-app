@@ -175,6 +175,8 @@ Page({
   onReachBottom: function () {
     // 判断页面数据加载完
     let curNo = this.data.pageNo;
+    console.log(this.data.pageNo)
+    console.log(this.data.pageCount)
     if (curNo === this.data.pageCount) {
       wx.showToast({
         title: '数据已加载完',

@@ -1,0 +1,7 @@
+<view>
+  <view class="header_card">
+    <view>
+      {{model.community}}【{{model.building}}-{{model.roomNo}}】
+    </view>
+  </view>
+</view>

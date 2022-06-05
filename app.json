@@ -4,7 +4,7 @@
         "pages/rent-list/rent-list",
         "pages/rent/rent",
         "pages/rent-order/rent-order",
-        "pages/rent-info/index",
+        "pages/rent-info/rent-info",
         "pages/covid/covid",
         "pages/message/message",
         "pages/contact/contact",

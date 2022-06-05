@@ -1,7 +1,7 @@
 // 引入env中的url
 const {
   baseUrl
-} = require('./env.js').prod; //这里上线的时候换成线上地址
+} = require('./env.js').dev; //这里上线的时候换成线上地址
 
 module.exports = {
   BASE_URL: baseUrl,
@@ -50,7 +50,7 @@ module.exports = {
             if (data.code == 401) {
               // wx.hideLoading();
               wx.showToast({
-                title: '检测到未登录,跳转中...',
+                title: '检测到未登录或登录过期,跳转中...',
                 icon: 'none',
                 duration: 5000,
                 success: () => {
@@ -60,6 +60,11 @@ module.exports = {
                     })
                   }, 4000);
                 }
+              })
+              wx.clearStorage({
+                success: (res) => {
+                  console.log("清除Storage")
+                },
               })
             }
             if (data.code == 0) {
