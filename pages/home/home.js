@@ -96,13 +96,13 @@ Page({
           id: 2,
           name: "新增业主租单",
           icon: "https://6375-cuifuan-4gl00gnn986698af-1311152798.tcb.qcloud.la/icon/%E6%96%B0%E5%A2%9E.png?sign=364df300873f6e0b4355dfcfc7df9097&t=1651921478",
-          path: "/pages/rent-order/rent-order?isYz=yevu"
+          path: "/pages/rent-order/rent-order?isYz=yevu&&isAdd=true"
         },
         {
           id: 3,
           name: "新增租客租单",
           icon: "https://6375-cuifuan-4gl00gnn986698af-1311152798.tcb.qcloud.la/icon/%E6%96%B0%E5%A2%9E.png?sign=364df300873f6e0b4355dfcfc7df9097&t=1651921478",
-          path: "/pages/rent-order/rent-order?isYz=zuke"
+          path: "/pages/rent-order/rent-order?isYz=zuke&&isAdd=true"
         }, {
           id: 4,
           name: "租单列表",

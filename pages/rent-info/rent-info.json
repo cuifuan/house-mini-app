@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "time-line": "../../components/time-line/time-line"
+    "time-line": "../../components/time-line/time-line",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-image": "@vant/weapp/image/index"
   },
   "enablePullDownRefresh": true,
   "backgroundColor": "#4993f7",

@@ -27,12 +27,69 @@
       <view class="header_card_value">{{model.rent}} 元</view>
     </view>
   </view>
-  <scroll-view scroll-y="true" class="time_line">
-    <time-line></time-line>
-  </scroll-view>
+  <view hidden="{{!isYz}}" class="main">
+    <view class="main_content">
+      <view class="header_card_title">水户号 :</view>
+      <view class="header_card_value">{{model.waterNo}}</view>
+      <view class="header_card_btn">
+        <van-button icon="{{copyIcon}}" type="info" size="mini" plain data-val="{{model.waterNo}}" bind:click="copyData" custom-style="border:none">复制</van-button>
+      </view>
+    </view>
+    <view class="main_content">
+      <view class="header_card_title">电户号 :</view>
+      <view class="header_card_value">{{model.electricNo}}</view>
+      <view class="header_card_btn">
+        <van-button icon="{{copyIcon}}" type="info" size="mini" plain dataset="{{model.electricNo}}" bindtap="copyData" custom-style="border:none">复制</van-button>
+      </view>
+    </view>
+    <view class="main_content">
+      <view class="header_card_title">煤户号 :</view>
+      <view class="header_card_value">{{model.gasNo}}</view>
+      <view class="header_card_btn">
+        <van-button icon="{{copyIcon}}" type="info" size="mini" plain data-val="{{model.gasNo}}" bindtap="copyData" custom-style="border:none">复制</van-button>
+      </view>
+    </view>
+  </view>
+  <view hidden="{{!isYz}}" class="main">
+    <view class="main_content">
+      <view class="header_card_title">{{isYz?'业主名':'租客名'}} :</view>
+      <view class="header_card_value">{{model.unionName}}</view>
+      <view class="header_card_btn">
+        <van-button icon="{{copyIcon}}" type="info" size="mini" plain data-val="{{model.unionName}}" bind:click="copyData" custom-style="border:none">复制</van-button>
+      </view>
+    </view>
+    <view class="main_content">
+      <view class="header_card_title">电话 :</view>
+      <view class="header_card_value">{{model.phoneNo}}</view>
+      <view class="header_card_btn">
+        <van-button icon="{{copyIcon}}" type="info" size="mini" plain data-val="{{model.phoneNo}}" bind:click="copyData" custom-style="border:none">复制</van-button>
+      </view>
+    </view>
+  </view>
+  <van-dialog use-slot title="租金详情" show="{{ showTimeLine }}" show-cancel-button bind:close="onClose">
+    <scroll-view scroll-y="true" class="time_line">
+      <time-line></time-line>
+    </scroll-view>
+  </van-dialog>
+
   <view class="booter_btn">
     <van-button color="var(--main-theme-color)" bindtap="editRentFrom">修改</van-button>
     <van-button color="var(--main-theme-color)" plain>收租</van-button>
-    <van-button  type="danger">删除</van-button>
+    <van-button color="var(--main-theme-color)" plain bind:click="openImgList">图库</van-button>
+    <van-button type="danger">删除</van-button>
   </view>
+  <view class="booter_btn">
+    <van-button color="var(--main-theme-color)" bind:click="showTimeLine">租金</van-button>
+    <van-button color="var(--main-theme-color)" plain size="normal" disabled><span style="font-size: 20rpx;">未开发</span></van-button>
+    <van-button color="var(--main-theme-color)" plain size="normal" disabled><span style="font-size: 20rpx;">未开发</span></van-button>
+    <van-button color="var(--main-theme-color)" plain size="normal" disabled><span style="font-size: 20rpx;">未开发</span></van-button>
+  </view>
+  <van-dialog use-slot title="图片资料库" show="{{ show }}">
+    <!-- <image src="{{item}}" wx:for="{{model.uploaderList}}" wx:key="index" data-src="{{item}}" bindtap="preview" /> -->
+    <view class="img_list">
+      <van-image wx:for="{{model.uploaderList}}" wx:key='index' wx:for-item="item" fit="cover" src="{{item}}" custom-class="img_bran2"  data-src="{{item}}" bindtap="preview"/>
+    </view>
+
+  </van-dialog>
+
 </view>

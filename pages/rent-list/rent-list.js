@@ -125,7 +125,9 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () { },
+  onShow: function () { 
+    this.searchList()
+  },
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -206,10 +208,17 @@ Page({
   },
   getRentInfo: function (args) {
     let index = args.currentTarget.dataset.id
-    // console.log(this.data.rentList[index])
-    this.setRentInfo(this.data.rentList[index])
+    let rentInfo = this.data.rentList[index]
+    console.log(rentInfo.rentListId)
+    let renListId = rentInfo.rentListId
+    // 开启加密存储
+    wx.setStorage({
+      key: "rentListId",
+      data: renListId
+    })
+    // wx.setStorage('', )
     wx.navigateTo({
-      url:"/pages/rent-info/rent-info"
+      url: "/pages/rent-info/rent-info"
     })
   }
 });

@@ -2,7 +2,7 @@ page {
   background-color: #f8f8f8;
   width: 100%;
   height: 100%;
-  
+  --button-normal-font-size:10rpx;
 }
 
 .page_bg {
@@ -31,7 +31,6 @@ page {
 .header_card_title {
   text-align: right;
   flex: 1;
-  font-family: 'alifont';
 }
 
 .header_card_value {
@@ -40,7 +39,21 @@ page {
   color:#b8b8b8;
   padding-right: 20rpx;
   box-sizing: border-box;
-  font-family: 'alifont';
+}
+.header_card_btn{
+  flex: 0.7;
+}
+
+.main{
+  width: 80%;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+  background-color: #ffffff;
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+}
+.main_content{
+  display: flex;
 }
 
 .time_line{
@@ -49,15 +62,38 @@ page {
   border-radius: 20rpx;
   background-color: #ffffff;
   overflow: hidden;
-  height: 600rpx;
+  height: 800rpx;
 }
 /* 底部按钮 */
 .booter_btn{
   width: 80%;
   margin: 0 auto;
   display: flex;
+  margin-bottom: 20rpx;
+  
 }
 .booter_btn>van-button{
   flex: 1;
   text-align: center;
+}
+.small_btn{
+  --font-size-md:12rpx;
+  --button-normal-font-size:12rpx;
+  /* --button-default-color: #f2f3f5; */
+  /* --button-border-radius: 20px; */
+}
+
+.img_list{
+  display: flex;
+  flex-wrap: wrap;
+  height: 600rpx;
+  justify-content: flex-start;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+}
+.img_bran2{
+  width: 200rpx;
+  height: 200rpx;
+  padding:0 10rpx;
+  box-sizing: border-box;
 }

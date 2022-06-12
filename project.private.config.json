@@ -39,13 +39,6 @@
           "scene": null
         },
         {
-          "name": "pages/rent-info/index",
-          "pathName": "pages/rent-info/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
           "name": "pages/home/home",
           "pathName": "pages/home/home",
           "query": "",
