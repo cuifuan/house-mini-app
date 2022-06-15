@@ -75,15 +75,6 @@ page {
   line-height: 80rpx;
 }
 
-.copy_right {
-  width: 22rpx;
-  height: 22rpx;
-  border-width: 2rpx 2rpx 0 0;
-  border-color: #ababab;
-  border-style: solid;
-  transform: rotate(45deg);
-  margin-top: 28rpx;
-}
 
 
 /* uploader */
@@ -111,14 +102,16 @@ page {
   flex-wrap: wrap;
   padding: 0 30rpx;
 }
-.ui_uploader_item{
+
+.ui_uploader_item {
   margin-right: 30rpx;
   margin-bottom: 30rpx;
   width: 200rpx;
   height: 200rpx;
   position: relative;
 }
-.ui_uploader_item_icon{
+
+.ui_uploader_item_icon {
   position: absolute;
   right: -20rpx;
   top: -20rpx;

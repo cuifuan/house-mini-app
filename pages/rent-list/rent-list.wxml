@@ -22,12 +22,5 @@
       <view class="bran_label">租金:</view>
       <view class="bran_value">￥{{item.rent}}</view>
     </view>
-    <!-- <view class="bran_card_item">
-      <view class="bran_label">操作:</view>
-      <view class="bran_btn_value">
-        <button plain="true" data-id="{{index}}" data-type="{{item.rentType}}" bindtap="editRentFrom" size="mini">编辑</button>
-        <button plain="true" data-id="{{item.rentListId}}" bindtap="removeById" size="mini">删除</button>
-      </view>
-    </view> -->
   </view>
 </view>

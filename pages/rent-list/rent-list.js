@@ -209,14 +209,13 @@ Page({
   getRentInfo: function (args) {
     let index = args.currentTarget.dataset.id
     let rentInfo = this.data.rentList[index]
-    console.log(rentInfo.rentListId)
+    console.log(rentInfo)
     let renListId = rentInfo.rentListId
     // 开启加密存储
     wx.setStorage({
       key: "rentListId",
       data: renListId
     })
-    // wx.setStorage('', )
     wx.navigateTo({
       url: "/pages/rent-info/rent-info"
     })

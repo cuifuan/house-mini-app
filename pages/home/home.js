@@ -86,12 +86,6 @@ Page({
   getGridList() {
     this.setData({
       gridList: [
-        // {
-        //   id: 1,
-        //   name: "感染记录",
-        //   icon: "https://6375-cuifuan-4gl00gnn986698af-1311152798.tcb.qcloud.la/icon/%E7%97%85%E6%AF%92.png?sign=b2ad506b1b36047871c0dcecff0d1a69&t=1651921292",
-        //   path: "/pages/covid/covid"
-        // }, 
         {
           id: 2,
           name: "新增业主租单",
