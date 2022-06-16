@@ -1,7 +1,7 @@
 // 引入env中的url
 const {
   baseUrl
-} = require('./env.js').dev; //这里上线的时候换成线上地址
+} = require('./env.js').prod; //这里上线的时候换成线上地址
 
 module.exports = {
   BASE_URL: baseUrl,

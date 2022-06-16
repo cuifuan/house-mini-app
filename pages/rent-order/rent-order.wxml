@@ -220,7 +220,7 @@
 			</view>
 			<view class="upload_explanation">支持格式为:.jpg .png,上传文件限制:{{uploaderNum}}/9张</view>
 		</view>
-		<button style="width: 98%;background-color: #4993f7;color: white;margin: 10rpx auto;" form-type="submit">
+		<button class="submit_btn" form-type="submit">
 			提交
 		</button>
 	</form>

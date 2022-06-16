@@ -5,7 +5,7 @@
     <view class="header_card">
         <view class="item" wx:for="{{cardList}}" wx:key="id">
             <view class="money">￥{{unit.format(item.value)}}</view>
-            <view style="color: #8D99AE;">{{item.name}}</view>
+            <view style="color: #696773;">{{item.name}}</view>
         </view>
     </view>
     <view class="main">

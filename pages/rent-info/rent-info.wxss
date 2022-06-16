@@ -1,21 +1,23 @@
 page {
   background-color: #f8f8f8;
-  width: 100%;
-  height: 100%;
-  --button-normal-font-size:10rpx;
+}
+
+.van-section {
+  box-sizing: border-box;
+  min-height: calc(100vh - 56px);
+  padding-bottom: 20px;
 }
 
 .page_bg {
   background-color: var(--main-theme-color);
   height: 400rpx;
-  border-bottom-left-radius: 300rpx;
-  border-bottom-right-radius: 300rpx;
+  border-bottom-left-radius: 200rpx;
+  border-bottom-right-radius: 200rpx;
 }
 
 .header_card {
-  /* border: 2rpx solid red; */
   height: 400rpx;
-  width: 80%;
+  width: 90%;
   margin: 20rpx auto;
   border-radius: 20rpx;
   background-color: #ffffff;
@@ -23,7 +25,8 @@ page {
   padding: 20rpx 20rpx;
   box-sizing: border-box;
 }
-.list_content{
+
+.list_content {
   display: flex;
   margin-bottom: 10rpx;
 }
@@ -31,32 +34,34 @@ page {
 .header_card_title {
   text-align: right;
   flex: 1;
+  color: #b8b8b8;
 }
 
 .header_card_value {
   text-align: right;
   flex: 2;
-  color:#b8b8b8;
   padding-right: 20rpx;
   box-sizing: border-box;
 }
-.header_card_btn{
+
+.header_card_btn {
   flex: 0.7;
 }
 
-.main{
-  width: 80%;
+.main {
+  width: 90%;
   margin: 20rpx auto;
   border-radius: 20rpx;
   background-color: #ffffff;
   padding: 20rpx 20rpx;
   box-sizing: border-box;
 }
-.main_content{
+
+.main_content {
   display: flex;
 }
 
-.time_line{
+.time_line {
   width: 80%;
   margin: 20rpx auto;
   border-radius: 20rpx;
@@ -64,26 +69,23 @@ page {
   overflow: hidden;
   height: 800rpx;
 }
+
 /* 底部按钮 */
-.booter_btn{
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  margin-bottom: 20rpx;
-  
-}
-.booter_btn>van-button{
-  flex: 1;
+.booter_btn {
+  width: 90%;
+  margin: 40rpx auto;
   text-align: center;
 }
-.small_btn{
-  --font-size-md:12rpx;
-  --button-normal-font-size:12rpx;
-  /* --button-default-color: #f2f3f5; */
-  /* --button-border-radius: 20px; */
+
+.booter_btn .van-button--normal {
+  margin-right: 20px;
+  width: 168rpx;
+  height: 84rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx 20rpx;
 }
 
-.img_list{
+.img_list {
   display: flex;
   flex-wrap: wrap;
   height: 600rpx;
@@ -91,10 +93,10 @@ page {
   padding: 30rpx 20rpx;
   box-sizing: border-box;
 }
-.img_bran2{
+
+.img_bran2 {
   width: 200rpx;
   height: 200rpx;
-  padding:0 10rpx;
+  padding: 0 10rpx;
   box-sizing: border-box;
 }
-

@@ -14,17 +14,17 @@ Page({
     gridList: [],
     cardList: [{
         "id": 1,
-        "name": "本月应收",
+        "name": "本月预估应收",
         "value": 0
       },
       {
         "id": 2,
-        "name": "本月应付",
+        "name": "本月预估应付",
         "value": 0
       },
       {
         "id": 3,
-        "name": "统计利润",
+        "name": "统计预估利润",
         "value": 0
       }
     ],
@@ -49,16 +49,9 @@ Page({
   clickTik(e) {
     let index = e.currentTarget.dataset.index
     let id = this.data.gridList[index].id
-    // if(id === 2){
-    //   console.log("新增租单")
-    //   this.setData({
-    //     showDialog: true
-    //   })
-    // }else{
     wx.navigateTo({
       url: this.data.gridList[index].path,
     })
-    // }
   },
   // 获取头部统计数据
   getDash() {
@@ -87,21 +80,27 @@ Page({
     this.setData({
       gridList: [
         {
-          id: 2,
+          id: 1,
           name: "新增业主租单",
-          icon: "https://6375-cuifuan-4gl00gnn986698af-1311152798.tcb.qcloud.la/icon/%E6%96%B0%E5%A2%9E.png?sign=364df300873f6e0b4355dfcfc7df9097&t=1651921478",
+          icon: "/images/owner.png",
           path: "/pages/rent-order/rent-order?isYz=yevu&&isAdd=true"
         },
         {
-          id: 3,
+          id: 2,
           name: "新增租客租单",
-          icon: "https://6375-cuifuan-4gl00gnn986698af-1311152798.tcb.qcloud.la/icon/%E6%96%B0%E5%A2%9E.png?sign=364df300873f6e0b4355dfcfc7df9097&t=1651921478",
+          icon: "/images/zuke.png",
           path: "/pages/rent-order/rent-order?isYz=zuke&&isAdd=true"
         }, {
-          id: 4,
+          id: 3,
           name: "租单列表",
-          icon: "https://6375-cuifuan-4gl00gnn986698af-1311152798.tcb.qcloud.la/icon/%E5%88%97%E8%A1%A8.png?sign=963b28bae02278ba9cc2daf9ba79d1c4&t=1651921542",
+          icon: "/images/rentList.png",
           path: "/pages/rent-list/rent-list"
+        },
+        {
+          id: 4,
+          name: "租金流水",
+          icon: "/images/money.png",
+          path: "/pages/finance/finance"
         }
       ]
     })

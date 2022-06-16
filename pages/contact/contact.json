@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "my-test": "/components/test/test"
-  },
-  "navigationBarTitleText": "小程序学习"
-}

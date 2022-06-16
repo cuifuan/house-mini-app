@@ -7,16 +7,16 @@
         "pages/rent-info/rent-info",
         "pages/covid/covid",
         "pages/message/message",
-        "pages/contact/contact",
+        "pages/finance/finance",
         "pages/list/list",
         "pages/user/user"
     ],
     "window": {
         "backgroundTextStyle": "dark",
-        "navigationBarBackgroundColor": "#4993f7",
+        "navigationBarBackgroundColor": "#1D3557",
         "navigationBarTitleText": "富安云",
         "navigationBarTextStyle": "white",
-        "backgroundColor": "#4993f7"
+        "backgroundColor": "#1D3557"
     },
     "tabBar": {
         "custom": true,

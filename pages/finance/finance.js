@@ -1,31 +1,41 @@
+import {
+  request
+} from '../../utils/request';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    count: 0
+    dataList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      this.getFinance()
+  },
+  /**
+   * 获取数据
+   */
+  getFinance() {
+    const self = this
+    const params = {
+      pageNo: 1,
+      pageSize: 10
+    }
+    request('api/v1/finance/page', 'POST', params)
+      .then((res) => {
+        if (res && res.code === 0) {
+          console.log(res.data)
+          self.setData({
+            dataList: res.data.records
+          })
+        }
+      })
+  },
 
-  },
-  countChange: function (e) {
-    // console.log(e.detail.value)
-    this.setData({
-      count: e.detail.value
-    })
-  },
-  getChild: function () {
-    const child = this.selectComponent("#child")
-    // console.log(child)
-    child.setData({
-      count: child.properties.count + 1
-    })
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

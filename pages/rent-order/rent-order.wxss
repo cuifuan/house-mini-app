@@ -179,3 +179,10 @@ page {
   border-bottom: 1rpx solid #efefef;
   text-align: center;
 }
+
+.submit_btn {
+  width: 98%;
+  background-color: var(--main-theme-color);
+  color: white;
+  margin: 10rpx auto;
+}

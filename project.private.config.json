@@ -58,6 +58,13 @@
           "query": "id=65&isYz=yevu",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "pages/finance/finance",
+          "pathName": "pages/finance/finance",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

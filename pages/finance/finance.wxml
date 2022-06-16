@@ -1,0 +1,13 @@
+<view class="main">
+  <view style="text-align: center;">
+    <span>租金流水开发中...</span>
+  </view>
+  <view wx:for="{{dataList}}" wx:key="index">
+    <view class="finance_card">
+      <view>{{item.address}}</view>
+      <view style="color:{{item.rentType==1?'red':'green'}}">{{item.rentMoney}}元</view>
+      <view>标签:{{item.rentType==1?'交房东':'收租客'}}</view>
+      <view>收租时间:{{item.incomeDate}}</view>
+    </view>
+  </view>
+</view>

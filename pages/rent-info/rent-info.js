@@ -28,12 +28,13 @@ Page({
     isYz: false,
     show: false,
     showTimeLine: false,
-    copyIcon: "https://6375-cuifuan-4gl00gnn986698af-1311152798.tcb.qcloud.la/icon/%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6.png?sign=fb4653adda3a69d7fc3e984dd08bfb19&t=1654490629",
-    showRentForm: true,
+    copyIcon: "/images/copy.png",
+    showRentForm: false,
     incomeDate: util.formatDate(new Date()),
     nextRent: 0,
     remark: '',
-    rentMoney: 0
+    rentMoney: 0,
+    timeLineList: []
   },
 
   /**
@@ -185,6 +186,7 @@ Page({
     this.setData({
       showTimeLine: true
     });
+    this.getRentInfo()
   },
   preview(event) {
     // console.log(event.currentTarget.dataset.src)
@@ -295,5 +297,19 @@ Page({
           })
         }
       })
+  },
+  getRentInfo(){
+    const params = {
+      rentListId: this.data.model.rentListId
+    }
+    const self = this
+    request('api/v1/finance/list', 'POST', params)
+    .then((res) => {
+      if(res && res.code === 0){
+        self.setData({
+          timeLineList: res.data
+        })
+      }
+    })
   }
 })

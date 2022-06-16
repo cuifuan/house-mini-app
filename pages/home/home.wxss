@@ -1,12 +1,12 @@
 /* pages/home/home.wxss */
 .content {
-    height: 100%;
+    height: calc(70vh);
     width: 100%;
 }
 
 .header {
-    background-color: #4993f7;
-    height: 10%;
+    background-color: var(--main-theme-color);
+    height: 12%;
 }
 
 .header_card {
@@ -16,7 +16,7 @@
     height: 180rpx;
     width: 90%;
     border-radius: 8rpx;
-    margin-top: -90rpx;
+    margin-top: -75rpx;
     display: flex;
     z-index: 100;
 }
@@ -27,13 +27,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* border: 2rpx solid red; */
-    /* padding-top: 20rpx; */
     box-sizing: border-box;
-    font-family: 'SimSun';
-    font-size: 24rpx;
-    border-left: 1rpx solid #efefef;
-    /* height: 100rpx; */
+    font-size: 26rpx;
 }
 .item:first-child{
   border-left: none;

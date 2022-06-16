@@ -1,12 +1,12 @@
-html,
+/* html,
 body,
 input,
 view,
-textarea {
+textarea { */
   /* font-family: 'PingFang-SC'; */
-  font-family: 'alifont';
-  font-size: 32rpx;
-}
+  /* font-family: 'alifont';
+  font-size: 32rpx; */
+/* } */
 
 page {
   height: 100%;
@@ -14,7 +14,8 @@ page {
   /* 定制警告按钮的背景色与边框颜色 */
   --button-danger-background-color: #C00000;
   --button-danger-border-color: #D60000;
-  --main-theme-color: #4993f7;
+  --main-theme-color: #1D3557;
+  --main-danger-color: #E63946;
 }
 .input_card {
   height: 80rpx;

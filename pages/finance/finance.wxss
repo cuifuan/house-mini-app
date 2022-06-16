@@ -1,0 +1,19 @@
+/* pages/contact/contact.wxss */
+page{
+  background-color: #E5E5E5;
+}
+.main{
+  height: calc(100vh - 156rpx);
+  padding-bottom: 20rpx;
+}
+.finance_card{
+  text-align: center;
+  /* height: 150rpx; */
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+  padding: 20rpx 10rpx;
+  box-sizing: border-box;
+}
