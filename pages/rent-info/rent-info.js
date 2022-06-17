@@ -334,7 +334,9 @@ Page({
                   title: '删除成功'
                 })
                 setTimeout(() => {
-                  that.searchList()
+                  wx.navigateBack({
+                    delta: 1,
+                  })
                 }, 1800)
               }
             })
