@@ -175,37 +175,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () { },
-  removeById: function (e) {
-    let that = this;
-    wx.showModal({
-      title: '提示',
-      content: '确定要删除吗？',
-      success: function (sm) {
-        if (sm.confirm) {
-          // 用户点击了确定 可以调用删除方法了
-          wx.showLoading({
-            title: '删除中...',
-          })
-          let id = e.currentTarget.dataset.id
-          request('rentList/removeById/' + id, 'GET')
-            .then((res) => {
-              wx.hideLoading()
-              console.log(res.data)
-              if (res.data) {
-                wx.showToast({
-                  title: '删除成功'
-                })
-                setTimeout(() => {
-                  that.searchList()
-                }, 1800)
-              }
-            })
-        } else if (sm.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
-  },
   getRentInfo: function (args) {
     let index = args.currentTarget.dataset.id
     let rentInfo = this.data.rentList[index]

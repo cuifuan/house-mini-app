@@ -19,9 +19,6 @@ module.exports = {
     let _url = `${baseUrl}/${url}`; //这里使用ES6的写法拼接的字符串
 
     return new Promise((resolve, reject) => {
-      // wx.showLoading({
-      //     title: '正在加载',
-      // });
       if (header == null) {
         header = {}
       }
@@ -30,7 +27,6 @@ module.exports = {
           'content-type': 'application/json;charset=UTF-8',
           'Cross-Origin-Opener-Policy': 'same-origin',
           'Cross-Origin-Embedder-Policy': 'require-corp'
-
         }
       }
       let token = wx.getStorageSync('token');
@@ -43,12 +39,11 @@ module.exports = {
         data: data,
         header: header,
         success: (res) => {
-          let data = res.data;
+          const data = res.data;
           if (res.statusCode == 200) {
-            // wx.hideLoading();
             //统一拦截--------401未登录活登录已过期token过期
             if (data.code == 401) {
-              // wx.hideLoading();
+              wx.hideLoading();
               wx.showToast({
                 title: '检测到未登录或登录过期,跳转中...',
                 icon: 'none',
@@ -69,13 +64,13 @@ module.exports = {
             }
             if (data.code == 0) {
               resolve(data);
-              // wx.hideLoading();
-              // wx.showToast({
-              //     title: '请求成功',
-              // })
+              wx.hideLoading();
+              wx.showToast({
+                  title: '请求成功',
+              })
             }
-            if (data.code == -1) {
-              // wx.hideLoading();
+            if (data.code == -1 || data.code == 500) {
+              wx.hideLoading();
               wx.showToast({
                 title: data.msg,
                 icon: 'none',
@@ -83,7 +78,7 @@ module.exports = {
               })
             }
             if (data.code == 404) {
-              // wx.hideLoading();
+              wx.hideLoading();
               wx.showToast({
                 title: '参数效验失败',
                 icon: 'none'

@@ -81,7 +81,7 @@
   <view class="booter_btn">
     <van-button color="#457B9D" square bindtap="editRentFrom">修改</van-button>
     <van-button color="#457B9D" square bindtap="showRentFrom">{{isYz ? '交租' : '收租'}}</van-button>
-    <van-button color="#F15152" square>删除</van-button>
+    <van-button color="#F15152" square bindtap="removeById">删除</van-button>
     <van-button color="var(--main-theme-color)" square bind:click="openImgList">图库</van-button>
     <van-button color="var(--main-theme-color)" square bind:click="showTimeLine">租金记录</van-button>
     <van-button color="var(--main-theme-color)" square>未开发</van-button>

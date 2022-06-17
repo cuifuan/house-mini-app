@@ -1,0 +1,46 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@vant/weapp': ^1.10.3
+  miniprogram-api-promise: ^1.0.4
+  mobx-miniprogram: ^4.13.2
+  mobx-miniprogram-bindings: ^2.1.5
+  moment: ^2.29.3
+
+dependencies:
+  '@vant/weapp': 1.10.3
+  miniprogram-api-promise: 1.0.4
+  mobx-miniprogram: 4.13.2
+  mobx-miniprogram-bindings: 2.1.5_mobx-miniprogram@4.13.2
+  moment: 2.29.3
+
+packages:
+
+  /@types/wechat-miniprogram/3.4.1:
+    resolution: {integrity: sha512-szbuYR32VotxNQNQ4YyQ6Ob3ya0tLY0zpf/xvi6DF8Oqb+0Y+5CL5BpxS+4wBSJvlu3VfSXhjxZ0ze1a3l16Pw==}
+    dev: false
+
+  /@vant/weapp/1.10.3:
+    resolution: {integrity: sha512-CcG5umI+zlJRN6hQXPeknOenPkVm6WBEgBaB6Y94kOmKLx9NHtHBdURwxuJEA4q4mxhUdOuf6sV7I8tZBnCVxw==}
+    dev: false
+
+  /miniprogram-api-promise/1.0.4:
+    resolution: {integrity: sha512-lS2ukj03Ugy8IJUDmdssklLT4kjzyRtVYwErhyDZkzxtqcxaed2xldRgNrsikigeMUBR9gAs7wgnjSKPlyKIYg==}
+    dev: false
+
+  /mobx-miniprogram-bindings/2.1.5_mobx-miniprogram@4.13.2:
+    resolution: {integrity: sha512-2HuiQL5FPgoYJ8XIMdw5iD6XT61LtsujaGyizbN845iZcsLmrKZiF0dKd4jQTSuC/6rGozqqhcy0sDc7qcpjYQ==}
+    peerDependencies:
+      mobx-miniprogram: ^4.0.0
+    dependencies:
+      '@types/wechat-miniprogram': 3.4.1
+      mobx-miniprogram: 4.13.2
+    dev: false
+
+  /mobx-miniprogram/4.13.2:
+    resolution: {integrity: sha512-C3HtkqHCLKp35N2gXA80yFD6PNfSqwioPFmnjTQpBLrEqYm1F6yiWZ57CW+8FqgmR306mw6ZfsM5q7hSTHw8BQ==}
+    dev: false
+
+  /moment/2.29.3:
+    resolution: {integrity: sha512-c6YRvhEo//6T2Jz/vVtYzqBzwvPT95JBQ+smCytzf7c50oMZRsR/a4w88aD34I+/QVSfnoAnSBFPJHItlOMJVw==}
+    dev: false

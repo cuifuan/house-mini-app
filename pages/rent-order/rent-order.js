@@ -326,7 +326,6 @@ Page({
   submit: function (e) {
     //获取要验证的内容
     let params = e.detail.value;
-    console.log(params);
 
     if (!this.WxValidate.checkForm(params)) {
       const error = this.WxValidate.errorList[0];
@@ -341,36 +340,38 @@ Page({
     this.setData({
       rentType: this.data.isYz ? 1 : 2,
     });
-    request("rentList/addOrUpdate", "POST", this.data).then((res) => {
-      if (res.data) {
-        wx.hideLoading();
-        wx.showToast({
-          title: "提交成功",
-          icon: "success",
-          duration: 2000,
-        });
-        setTimeout(() => {
-          // if (that.data.isUpdate) {
-          //   const eventChannel = that.getOpenerEventChannel()
-          //   eventChannel.emit('acceptDataFromOpenedPage', {
-          //     data: 'ok'
-          //   });
-          // }
-          // self.setRentInfo(self.data)
-          // self.storeBindings.updateStoreBindings() //storeBindings立即推送数据到组件或者页面
-          wx.navigateBack({
-            delta: 1,
+    request("rentList/addOrUpdate", "POST", this.data)
+      .then((res) => {
+        console.log(res)
+        if (res.data) {
+          wx.hideLoading();
+          wx.showToast({
+            title: "提交成功",
+            icon: "success",
+            duration: 2000,
           });
-        }, 2500);
-      } else {
-        wx.hideLoading();
-        wx.showToast({
-          title: "请求失败" + res.msg,
-          icon: "error",
-          duration: 2000,
-        });
-      }
-    });
+          setTimeout(() => {
+            // if (that.data.isUpdate) {
+            //   const eventChannel = that.getOpenerEventChannel()
+            //   eventChannel.emit('acceptDataFromOpenedPage', {
+            //     data: 'ok'
+            //   });
+            // }
+            // self.setRentInfo(self.data)
+            // self.storeBindings.updateStoreBindings() //storeBindings立即推送数据到组件或者页面
+            wx.navigateBack({
+              delta: 1,
+            });
+          }, 2500);
+        } else {
+          wx.hideLoading();
+          wx.showToast({
+            title: "请求失败" + res.msg,
+            icon: "error",
+            duration: 2000,
+          });
+        }
+      });
   },
   /**
    * 生命周期函数--监听页面显示
