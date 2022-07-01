@@ -67,8 +67,12 @@ Page({
           isYz: flag
         });
       } else {
+        // 获取eventChannel对象
+        const eventChannel = this.getOpenerEventChannel();
+        eventChannel.on('acceptDataFromOpenerPage', function (data) { //父页面所触发的函数
+          console.log(data)
+        })
         let model = this.getRentInfo();
-
         let isYevu = model.rentType === 1;
         this.setData({
           isYz: isYevu,
@@ -336,7 +340,7 @@ Page({
     wx.showLoading({
       title: "提交中",
     });
-    let self = this;
+    const self = this;
     this.setData({
       rentType: this.data.isYz ? 1 : 2,
     });
@@ -351,14 +355,11 @@ Page({
             duration: 2000,
           });
           setTimeout(() => {
-            // if (that.data.isUpdate) {
-            //   const eventChannel = that.getOpenerEventChannel()
-            //   eventChannel.emit('acceptDataFromOpenedPage', {
-            //     data: 'ok'
-            //   });
-            // }
-            // self.setRentInfo(self.data)
-            // self.storeBindings.updateStoreBindings() //storeBindings立即推送数据到组件或者页面
+            const eventChannel = self.getOpenerEventChannel();
+            // 触发父页面的函数
+            eventChannel.emit('acceptDataFromOpenedPage', {
+              isUpdate: true
+            });
             wx.navigateBack({
               delta: 1,
             });

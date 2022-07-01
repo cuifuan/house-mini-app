@@ -2,8 +2,8 @@
     module.exports={
         //开发环境的url
         dev:{
-            // baseUrl:"http://127.0.0.1:9999/house"
-            baseUrl:"http://192.168.110.86:9999/house"
+            baseUrl:"http://127.0.0.1:9999/house"
+            // baseUrl:"http://192.168.110.86:9999/house"
         },
         //线上环境url
         prod:{

@@ -46,7 +46,7 @@ Page({
       store,
       actions: ['setRentInfo']
     })
-    this.getRentInfoData()
+    // this.getRentInfoData()
   },
   /**
    * 根据 id 获取对象
@@ -62,9 +62,11 @@ Page({
         let params = {
           "rentListId": res.data
         }
+        self.setData({
+          rentListId: res.data
+        })
         request('rentList/getById', 'POST', params)
           .then((res) => {
-            wx.hideLoading()
             self.setData({
               model: res.data,
               isYz: res.data.rentType === 1
@@ -76,13 +78,15 @@ Page({
         cb && cb()
       }
     })
-
+    wx.hideLoading()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {},
+  onReady: function () {
+
+  },
 
   /**
    * 生命周期函数--监听页面显示
@@ -136,22 +140,23 @@ Page({
     // let isYz = this.data.isYz;
     // let that = this
     this.setRentInfo(this.data.model)
+    const self = this
     wx.navigateTo({
       url: '/pages/rent-order/rent-order',
-      // events: {
-      //   // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
-      //   acceptDataFromOpenedPage: function (data) {
-      //     if (data.data === "ok") {
-      //       that.searchList("")
-      //     }
-      //   }
-      // },
-      // success: function (res) {
-      // 通过eventChannel向被打开页面传送数据
-      // res.eventChannel.emit('acceptDataFromOpenerPage', {
-      //   data: 'areYouOk'
-      // })
-      // }
+      events: {
+        // 由子页面触发
+        acceptDataFromOpenedPage: function (data) {
+          if(data.isUpdate){
+            self.getRentInfoData()
+          }
+        }
+      },
+      success: function (res) {
+        // 触发子页面的函数
+        res.eventChannel.emit('acceptDataFromOpenerPage', {
+          rentListId: self.data.rentListId
+        })
+      }
     })
   },
   copyData: function (e) {
@@ -221,6 +226,7 @@ Page({
     })
   },
   bindNextDateXChange(e) {
+    console.log(e.detail.value)
     this.setData({
       nextDateX: e.detail.value
     })
@@ -287,29 +293,30 @@ Page({
     }
     request('api/v1/finance/add', 'POST', params)
       .then((res) => {
-        wx.hideLoading()
-        if(res && res.code === 0){
+        if (res && res.code === 0) {
           wx.showToast({
             title: '数据已提交完成',
             icon: 'success',
             duration: 2000
           })
+          this.getRentInfoData()
         }
       })
+      wx.hideLoading()
   },
-  getRentInfo(){
+  getRentInfo() {
     const params = {
       rentListId: this.data.model.rentListId
     }
     const self = this
     request('api/v1/finance/list', 'POST', params)
-    .then((res) => {
-      if(res && res.code === 0){
-        self.setData({
-          timeLineList: res.data
-        })
-      }
-    })
+      .then((res) => {
+        if (res && res.code === 0) {
+          self.setData({
+            timeLineList: res.data
+          })
+        }
+      })
   },
   /**
    * 删除 

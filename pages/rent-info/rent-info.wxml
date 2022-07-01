@@ -53,7 +53,7 @@
       </view>
     </view>
   </view>
-  <view hidden="{{!isYz}}" class="main">
+  <view class="main">
     <view class="main_content">
       <view class="header_card_title">{{ isYz ? '业主名' : '租客名'}} :</view>
       <view class="header_card_value">{{model.unionName}}</view>
