@@ -38,9 +38,6 @@
         ]
     },
     "sitemapLocation": "sitemap.json",
-    "useExtendedLib": {
-        "weui": true
-    },
     "lazyCodeLoading": "requiredComponents",
     "usingComponents": {
         "van-button": "@vant/weapp/button/index",

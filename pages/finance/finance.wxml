@@ -1,13 +1,21 @@
 <view class="main">
-  <view style="text-align: center;">
-    <span>租金流水开发中...</span>
-  </view>
+  <van-dropdown-menu>
+    <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+    <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+  </van-dropdown-menu>
   <view wx:for="{{dataList}}" wx:key="index">
     <view class="finance_card">
-      <view>{{item.address}}</view>
-      <view style="color:{{item.rentType==1?'red':'green'}}">{{item.rentMoney}}元</view>
-      <view>标签:{{item.rentType==1?'交房东':'收租客'}}</view>
-      <view>收租时间:{{item.incomeDate}}</view>
+      <view class="img">
+        <image src="{{item.rentType==1?'/images/cost/coat_out.png':'/images/cost/cost_in.png'}}" mode="widthFix"></image>
+      </view>
+      <view class="content">
+        <view>{{item.address}}</view>
+        <view>[{{item.rentType==1?'缴纳业主':'应收租客'}}]</view>
+        <view style="color:#999999">时间:{{item.incomeDate}}</view>
+      </view>
+      <view class="cost">
+        <span style="color:{{item.rentType==1?'#101010':'#e08133'}};font-weight: 600;">{{item.rentType==1?'-':'+'}}{{item.rentMoney}}.00</span>
+      </view>
     </view>
   </view>
 </view>

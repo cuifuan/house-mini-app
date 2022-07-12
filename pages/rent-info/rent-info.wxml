@@ -40,7 +40,7 @@
       <view class="header_card_title">电户号 :</view>
       <view class="header_card_value">{{model.electricNo}}</view>
       <view class="header_card_btn">
-        <van-button icon="{{copyIcon}}" color="var(--main-theme-color)" size="mini" plain dataset="{{model.electricNo}}" bindtap="copyData" custom-style="border:none">复制
+        <van-button icon="{{copyIcon}}" color="var(--main-theme-color)" size="mini" plain data-val="{{model.electricNo}}" bindtap="copyData" custom-style="border:none">复制
         </van-button>
       </view>
     </view>

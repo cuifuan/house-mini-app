@@ -7,9 +7,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dataList: []
+    dataList: [],
+    option1: [
+      { text: '全部', value: 0 },
+      { text: '业主', value: 1 },
+      { text: '租客', value: 2 },
+    ],
+    option2: [
+      { text: '默认当月', value: 'a' },
+      { text: '当年', value: 'b' },
+      { text: '上个月', value: 'c' },
+    ],
+    value1: 0,
+    value2: 'a',
   },
-
+  handleSingleSelect(e) {
+    this.setData({
+      'singleSelect.value': e.detail.value,
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -65,9 +65,6 @@ module.exports = {
             if (data.code == 0) {
               resolve(data);
               wx.hideLoading();
-              wx.showToast({
-                  title: '请求成功',
-              })
             }
             if (data.code == -1 || data.code == 500) {
               wx.hideLoading();
